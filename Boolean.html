@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Boolean';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -174,7 +176,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    <no title>
                 </a>
             </li>
         </ul>
@@ -389,25 +391,25 @@ document.write(`
 <li><p><strong>AND (∧)</strong></p>
 <ul class="simple">
 <li><p>Hanya benar jika kedua operan bernilai benar.</p></li>
-<li><p>Contoh: ( A \land B ) benar hanya jika <strong>A</strong> dan <strong>B</strong> keduanya benar.</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(( A \land B )\)</span> benar hanya jika <strong>A</strong> dan <strong>B</strong> keduanya benar.</p></li>
 </ul>
 </li>
 <li><p><strong>OR (∨)</strong></p>
 <ul class="simple">
 <li><p>Benar jika salah satu atau kedua operan bernilai benar.</p></li>
-<li><p>Contoh: ( A \lor B ) benar jika <strong>A</strong> atau <strong>B</strong> (atau keduanya) benar.</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(( A \lor B )\)</span> benar jika <strong>A</strong> atau <strong>B</strong> (atau keduanya) benar.</p></li>
 </ul>
 </li>
 <li><p><strong>NOT (¬)</strong></p>
 <ul class="simple">
 <li><p>Membalikkan nilai kebenaran.</p></li>
-<li><p>Contoh: ( \neg A ) bernilai benar jika <strong>A</strong> salah, dan sebaliknya.</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(( \neg A )\)</span> bernilai benar jika <strong>A</strong> salah, dan sebaliknya.</p></li>
 </ul>
 </li>
 <li><p><strong>IMPLIKASI (→)</strong></p>
 <ul class="simple">
 <li><p>Bernilai salah hanya jika premis (sebelum panah) benar dan konklusi (setelah panah) salah.</p></li>
-<li><p>Contoh: ( A \rightarrow B ) benar kecuali <strong>A</strong> benar dan <strong>B</strong> salah.</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(( A \rightarrow B )\)</span> benar kecuali <strong>A</strong> benar dan <strong>B</strong> salah.</p></li>
 </ul>
 </li>
 </ol>
@@ -451,6 +453,238 @@ document.write(`
 <li><p><strong>Algoritma</strong> dan <strong>struktur data</strong> (seperti pencarian dan pengurutan)</p></li>
 </ul>
 <p>Konsep ini juga mendasari <strong>gerbang logika</strong> dalam rangkaian digital yang mengontrol perilaku sirkuit elektronik dalam komputer.</p>
+<p>#Gerbang logika
+Gerbang Logika adalah blok dasar dalam sirkuit digital yang digunakan untuk melakukan operasi logika. Gerbang-gerbang ini menerima satu atau lebih sinyal input dan menghasilkan satu sinyal output berdasarkan fungsi logika tertentu. Setiap gerbang logika mewakili operasi dasar dalam aljabar Boolean. Berikut beberapa jenis gerbang logika dasar:</p>
+<ol class="arabic">
+<li><p><strong>Gerbang AND</strong>: Menghasilkan output <strong>TRUE (1)</strong> hanya jika semua inputnya <strong>TRUE (1)</strong>.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( A \cdot B )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang OR</strong>: Menghasilkan output <strong>TRUE (1)</strong> jika salah satu input atau lebih adalah <strong>TRUE (1)</strong>.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( A + B )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang NOT</strong>: Menghasilkan output yang merupakan kebalikan dari inputnya (mengubah <strong>TRUE</strong> menjadi <strong>FALSE</strong> dan sebaliknya).</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( \overline{A} )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang NAND</strong>: Kombinasi dari gerbang AND yang diikuti oleh gerbang NOT. Menghasilkan output <strong>FALSE (0)</strong> hanya jika semua inputnya <strong>TRUE (1)</strong>.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( \overline{A \cdot B} )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang NOR</strong>: Kombinasi dari gerbang OR yang diikuti oleh gerbang NOT. Menghasilkan output <strong>TRUE (1)</strong> hanya jika semua inputnya <strong>FALSE (0)</strong>.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( \overline{A + B} )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang XOR (Exclusive OR)</strong>: Menghasilkan output <strong>TRUE (1)</strong> hanya jika satu dari inputnya <strong>TRUE (1)</strong>, tetapi tidak keduanya.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( A \oplus B )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Gerbang XNOR (Exclusive NOR)</strong>: Kebalikan dari gerbang XOR, menghasilkan output <strong>TRUE (1)</strong> jika inputnya sama.</p>
+<ul>
+<li><p>Simbol: <span class="math notranslate nohighlight">\(( \overline{A \oplus B} )\)</span></p></li>
+<li><p>Tabel kebenaran:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p>Gerbang logika digunakan dalam berbagai aplikasi seperti rangkaian komputer, pemrosesan sinyal, dan perangkat digital lainnya.</p>
 </section>
 
     <script type="text/x-thebe-config">
