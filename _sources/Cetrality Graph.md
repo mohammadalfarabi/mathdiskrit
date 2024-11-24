@@ -6,51 +6,28 @@ title: Cetrality Graph
 # Cetrality Graph
 
 # Social Network Analysis 
-merupakan bidang kajian yang mengekplorasitentang hubungan manusia dengan menggunakan teori graf. Implementasi Social Network Analysis dapat menjelaskan relasi atau hubungan antar aktor melalui visualisasi berbentuk graf.
-
-![image](https://hackmd.io/_uploads/SkvbK1ufkx.png)
-![image](https://hackmd.io/_uploads/ryyNK1dMyl.png)
-Social network 
-terdapat node yang mewakili 
-orang atau individu atau aktor. 
-Relasi  antar objek  dapat dinyatakan dengan link 
-atau edges yang terjadi antara aktor tersebut 
-Social network terdiri dari banyak aktor 
-yang mempunyai relasi satu sama lain hingga
-membentuk peta jaringan sosial yang dinyatakan dengan 
-graph
+SNA adalah metode untuk mempelajari struktur hubungan atau interaksi antar individu, kelompok, organisasi, atau entitas lainnya dalam sebuah jaringan. SNA memanfaatkan konsep matematika, khususnya teori graf, untuk merepresentasikan hubungan tersebut sebagai simpul (nodes) dan hubungan di antara mereka sebagai sisi (edges).
 
 # Definisi
-Tidak semua node dalam jaringan adalah penting  (aktor)
-Mencari node yang paling penting dalam suatu jaringan
-Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Centrality dalam teori graf dan social network .Dibagi menjadi empat jenis, 
-- degree centrality, 
-- betweeness centrality, 
-- closeness centrality 
-- eigenvector centrality
+Centrality: Ukuran matematis yang digunakan untuk mengidentifikasi simpul kunci dalam graf berdasarkan berbagai kriteria, seperti jumlah koneksi, posisi dalam jalur jaringan, atau kedekatan dengan simpul lainnya.
 
-# Degree Centrality
-Degree centrality adalah jumlah edge yang terkoneksi pada suatu node yang mewakili interaksi.
+Centrality Graph: Representasi graf yang menunjukkan jaringan dengan metrik centrality tertentu, yang digunakan untuk memvisualisasikan simpul-simpul yang paling signifikan dalam jaringan berdasarkan metrik yang dipilih.
 
-Pentingnya node ditentukan oleh jumlah node yang berdekatan dengan node tersebut
-- Lebih besar derajatnya (degree), maka lebih penting node itu dalam suatu jaringan 
-- Hanya sebagian kecil node yang memiliki derajat tinggi dalam jaringan 
+# Jenis-jenis Centrality dalam Graph
+## Degree Centrality
+Mengukur pentingnya simpul berdasarkan jumlah koneksi langsungnya. Simpul dengan koneksi terbanyak dianggap paling sentral.
 
-Degree Centrality : 
-![image](https://hackmd.io/_uploads/BkflcJuGJe.png)
+## Closeness Centrality
+Mengukur seberapa dekat suatu simpul dengan simpul-simpul lain dalam jaringan. Simpul yang dapat mencapai simpul lain dengan jalur terpendek memiliki nilai closeness centrality tinggi.
 
-Normalisasi  Degree Centrality :
-![image](https://hackmd.io/_uploads/B1TGq1dGkg.png)
+## Betweenness Centrality
+Mengukur seberapa sering suatu simpul menjadi perantara jalur terpendek antara pasangan simpul lainnya. Simpul ini berperan sebagai jembatan atau penghubung.
 
-# Closeness Centrality
-Closenes centrality adalah nilai kedekatan antara satu node dengan node lain dalam jaringan dengan menghitung rata-rata dari jarak relasi node-node tersebut. Skor closeness centrality mewakili kecepatan dalam penyebaran informasi.
+## Eigenvector Centrality
+Menentukan kepentingan simpul berdasarkan koneksi dengan simpul-simpul penting lainnya. Simpul yang terhubung dengan simpul-simpul berpengaruh akan memiliki nilai lebih tinggi.
 
-Average Distance:
-![image](https://hackmd.io/_uploads/S1cDcJOfkg.png)
+## Katz Centrality
+Merupakan pengembangan dari eigenvector centrality, di mana setiap koneksi diberi bobot tambahan untuk menghitung pengaruh secara lebih luas.
 
-# Betweenness Centrality
-Skor betweeness Centrality mewakili seberapa besar informasi yang tersebar dari suatu aktor. Semakin besar skor, artinya aktor tersebut semakin berperan dalam penyebaran informasi 
-
-Semakin banyak lintasan yang harus melewati persimpangan itu (misal tidak ada jalan alternatif), maka semakin penting arti persimpangan tersebut. Hal ini menandakan seberapa besar suatu node diperlukan sebagai penghubung dalam penyebaran informasi di dalam jaringan
-
-Ukuran ini juga dapat digunakan untuk mengidentifikasi boundary spanners, yaitu orang atau node yang berperan sebagai penghubung (jembatan) antara dua komunitas
+## Harmonic Centrality
+Variasi dari closeness centrality yang mempertimbangkan hubungan jarak secara harmonis, bahkan jika beberapa simpul tidak dapat dicapai.

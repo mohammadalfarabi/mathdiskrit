@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Cetrality Graph';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DERETAN DAN REKURSI" href="DERETAN%20DAN%20REKURSI.html" />
     <link rel="prev" title="Aljabar Boolean Dan Gerbang Logika" href="Boolean.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Logika.html">Logika Matemaktika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Aljabar Boolean Dan Gerbang Logika</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cetrality Graph</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DERETAN%20DAN%20REKURSI.html">DERETAN DAN REKURSI</a></li>
 
 
 
@@ -388,9 +393,15 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cetrality Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#social-network-analysis">Social Network Analysis</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-centrality-dalam-graph">Jenis-jenis Centrality dalam Graph</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#katz-centrality">Katz Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-centrality">Harmonic Centrality</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -408,55 +419,39 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="social-network-analysis">
 <h1>Social Network Analysis<a class="headerlink" href="#social-network-analysis" title="Link to this heading">#</a></h1>
-<p>merupakan bidang kajian yang mengekplorasitentang hubungan manusia dengan menggunakan teori graf. Implementasi Social Network Analysis dapat menjelaskan relasi atau hubungan antar aktor melalui visualisasi berbentuk graf.</p>
-<p><img alt="image" src="https://hackmd.io/_uploads/SkvbK1ufkx.png" />
-<img alt="image" src="https://hackmd.io/_uploads/ryyNK1dMyl.png" />
-Social network
-terdapat node yang mewakili
-orang atau individu atau aktor.
-Relasi  antar objek  dapat dinyatakan dengan link
-atau edges yang terjadi antara aktor tersebut
-Social network terdiri dari banyak aktor
-yang mempunyai relasi satu sama lain hingga
-membentuk peta jaringan sosial yang dinyatakan dengan
-graph</p>
+<p>SNA adalah metode untuk mempelajari struktur hubungan atau interaksi antar individu, kelompok, organisasi, atau entitas lainnya dalam sebuah jaringan. SNA memanfaatkan konsep matematika, khususnya teori graf, untuk merepresentasikan hubungan tersebut sebagai simpul (nodes) dan hubungan di antara mereka sebagai sisi (edges).</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="definisi">
 <h1>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h1>
-<p>Tidak semua node dalam jaringan adalah penting  (aktor)
-Mencari node yang paling penting dalam suatu jaringan
-Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Centrality dalam teori graf dan social network .Dibagi menjadi empat jenis,</p>
-<ul class="simple">
-<li><p>degree centrality,</p></li>
-<li><p>betweeness centrality,</p></li>
-<li><p>closeness centrality</p></li>
-<li><p>eigenvector centrality</p></li>
-</ul>
+<p>Centrality: Ukuran matematis yang digunakan untuk mengidentifikasi simpul kunci dalam graf berdasarkan berbagai kriteria, seperti jumlah koneksi, posisi dalam jalur jaringan, atau kedekatan dengan simpul lainnya.</p>
+<p>Centrality Graph: Representasi graf yang menunjukkan jaringan dengan metrik centrality tertentu, yang digunakan untuk memvisualisasikan simpul-simpul yang paling signifikan dalam jaringan berdasarkan metrik yang dipilih.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="degree-centrality">
-<h1>Degree Centrality<a class="headerlink" href="#degree-centrality" title="Link to this heading">#</a></h1>
-<p>Degree centrality adalah jumlah edge yang terkoneksi pada suatu node yang mewakili interaksi.</p>
-<p>Pentingnya node ditentukan oleh jumlah node yang berdekatan dengan node tersebut</p>
-<ul class="simple">
-<li><p>Lebih besar derajatnya (degree), maka lebih penting node itu dalam suatu jaringan</p></li>
-<li><p>Hanya sebagian kecil node yang memiliki derajat tinggi dalam jaringan</p></li>
-</ul>
-<p>Degree Centrality :
-<img alt="image" src="https://hackmd.io/_uploads/BkflcJuGJe.png" /></p>
-<p>Normalisasi  Degree Centrality :
-<img alt="image" src="https://hackmd.io/_uploads/B1TGq1dGkg.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="jenis-jenis-centrality-dalam-graph">
+<h1>Jenis-jenis Centrality dalam Graph<a class="headerlink" href="#jenis-jenis-centrality-dalam-graph" title="Link to this heading">#</a></h1>
+<section id="degree-centrality">
+<h2>Degree Centrality<a class="headerlink" href="#degree-centrality" title="Link to this heading">#</a></h2>
+<p>Mengukur pentingnya simpul berdasarkan jumlah koneksi langsungnya. Simpul dengan koneksi terbanyak dianggap paling sentral.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="closeness-centrality">
-<h1>Closeness Centrality<a class="headerlink" href="#closeness-centrality" title="Link to this heading">#</a></h1>
-<p>Closenes centrality adalah nilai kedekatan antara satu node dengan node lain dalam jaringan dengan menghitung rata-rata dari jarak relasi node-node tersebut. Skor closeness centrality mewakili kecepatan dalam penyebaran informasi.</p>
-<p>Average Distance:
-<img alt="image" src="https://hackmd.io/_uploads/S1cDcJOfkg.png" /></p>
+<section id="closeness-centrality">
+<h2>Closeness Centrality<a class="headerlink" href="#closeness-centrality" title="Link to this heading">#</a></h2>
+<p>Mengukur seberapa dekat suatu simpul dengan simpul-simpul lain dalam jaringan. Simpul yang dapat mencapai simpul lain dengan jalur terpendek memiliki nilai closeness centrality tinggi.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="betweenness-centrality">
-<h1>Betweenness Centrality<a class="headerlink" href="#betweenness-centrality" title="Link to this heading">#</a></h1>
-<p>Skor betweeness Centrality mewakili seberapa besar informasi yang tersebar dari suatu aktor. Semakin besar skor, artinya aktor tersebut semakin berperan dalam penyebaran informasi</p>
-<p>Semakin banyak lintasan yang harus melewati persimpangan itu (misal tidak ada jalan alternatif), maka semakin penting arti persimpangan tersebut. Hal ini menandakan seberapa besar suatu node diperlukan sebagai penghubung dalam penyebaran informasi di dalam jaringan</p>
-<p>Ukuran ini juga dapat digunakan untuk mengidentifikasi boundary spanners, yaitu orang atau node yang berperan sebagai penghubung (jembatan) antara dua komunitas</p>
+<section id="betweenness-centrality">
+<h2>Betweenness Centrality<a class="headerlink" href="#betweenness-centrality" title="Link to this heading">#</a></h2>
+<p>Mengukur seberapa sering suatu simpul menjadi perantara jalur terpendek antara pasangan simpul lainnya. Simpul ini berperan sebagai jembatan atau penghubung.</p>
+</section>
+<section id="eigenvector-centrality">
+<h2>Eigenvector Centrality<a class="headerlink" href="#eigenvector-centrality" title="Link to this heading">#</a></h2>
+<p>Menentukan kepentingan simpul berdasarkan koneksi dengan simpul-simpul penting lainnya. Simpul yang terhubung dengan simpul-simpul berpengaruh akan memiliki nilai lebih tinggi.</p>
+</section>
+<section id="katz-centrality">
+<h2>Katz Centrality<a class="headerlink" href="#katz-centrality" title="Link to this heading">#</a></h2>
+<p>Merupakan pengembangan dari eigenvector centrality, di mana setiap koneksi diberi bobot tambahan untuk menghitung pengaruh secara lebih luas.</p>
+</section>
+<section id="harmonic-centrality">
+<h2>Harmonic Centrality<a class="headerlink" href="#harmonic-centrality" title="Link to this heading">#</a></h2>
+<p>Variasi dari closeness centrality yang mempertimbangkan hubungan jarak secara harmonis, bahkan jika beberapa simpul tidak dapat dicapai.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -498,6 +493,15 @@ Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Central
         <p class="prev-next-title">Aljabar Boolean Dan Gerbang Logika</p>
       </div>
     </a>
+    <a class="right-next"
+       href="DERETAN%20DAN%20REKURSI.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DERETAN DAN REKURSI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -517,9 +521,15 @@ Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Central
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cetrality Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#social-network-analysis">Social Network Analysis</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-centrality-dalam-graph">Jenis-jenis Centrality dalam Graph</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#katz-centrality">Katz Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-centrality">Harmonic Centrality</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
