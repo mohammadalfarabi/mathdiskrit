@@ -148,45 +148,51 @@ Menghitung 5! secara rekursif adalah:
 1.$\phi$
 2.![m](https://hackmd.io/_uploads/SJ2cxHCfkg.gif)
 
+# E. Tugas Pembuktian
+
+
+Pembuktian Rumus-Rumus Penjumlahan (Summation Formula)
+## 1. Rumus $\sum_{k=0}^n ar^k = \frac{ar^{n+1} - a}{r-1}, \ r \neq 1$
+Pembuktian:
+
+\begin{split} S = \sum_{k=0}^n ar^k \\ = a + ar + ar^2 + \cdots + ar^n. \end{split}\
+Kalikan kedua sisi dengan $(r)$:
+
+$rS = ar + ar^2 + ar^3 + \cdots + ar^{n+1}.$
+Kurangkan persamaan pertama dari yang kedua:
+
+$\begin{split} S - rS = a - ar^{n+1} \\ S(1-r) = a(1-r^{n+1}) \\ S = \frac{ar^{n+1} - a}{r-1}, \quad r \neq 1. \end{split}$
+## 2. Rumus $\sum_{k=1}^n k = \frac{n(n+1)}{2}$
+Pembuktian:
+
+\begin{split} S = \sum_{k=1}^n k \\ = 1 + 2 + 3 + \cdots + n. \end{split}\
+Tuliskan kembali urutan secara terbalik:
+
+$S = n + (n-1) + (n-2) + \cdots + 1.$
+Jumlahkan dua barisan:
+
+$2S = (1+n) + (2+(n-1)) + (3+(n-2)) + \cdots + (n+1).$
+Setiap pasangan menghasilkan \(n+1\), dan terdapat \(n\) pasangan. Maka:
+
+\begin{split} 2S = n(n+1) \\ S = \frac{n(n+1)}{2}. \end{split}
+## 3. Rumus $\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$
+Pembuktian (Induksi Matematika):
+
+Basis Induksi: Untuk \(n=1\),
+
+$\begin{split} \sum_{k=1}^1 k^2 = 1^2 = 1 \\ \frac{1(1+1)(2\cdot 1 + 1)}{6} = \frac{1 \cdot 2 \cdot 3}{6} = 1. \end{split}$
+Maka, rumus benar untuk \(n=1\).
+
+Hipotesis Induksi: Misalkan rumus benar untuk $(n=m)$, yaitu:
+
+$\sum_{k=1}^m k^2 = \frac{m(m+1)(2m+1)}{6}.$
+Langkah Induksi: Buktikan untuk $(n=m+1)$:
+
+\begin{split} \sum_{k=1}^{m+1} k^2 = \sum_{k=1}^m k^2 + (m+1)^2 \\ = \frac{m(m+1)(2m+1)}{6} + (m+1)^2. \end{split}
+Faktorkan \(m+1\):
+
+\begin{split} \frac{m(m+1)(2m+1)}{6} + (m+1)^2 = \frac{(m+1)\left[m(2m+1) + 6(m+1)\right]}{6} \\ = \frac{(m+1)(2m^2 + 7m + 6)}{6} \\ = \frac{(m+1)(m+2)(2m+3)}{6}. \end{split}
+Maka, rumus benar untuk $(n=m+1)$.
+
+Oleh karena itu, rumus terbukti benar untuk semua $n \geq 1$.
 								
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
