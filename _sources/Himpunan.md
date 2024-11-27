@@ -4,13 +4,6 @@ title: Himpunan
 ---
 
 # HIMPUNAN
-
----
-title: Himpunan
-
----
-
-# HIMPUNAN
 **Himpunan** adalah konsep matematika yang mewakili kumpulan objek atau elemen yang memiliki sifat-sifat tertentu. Himpunan bisa terdiri dari bilangan, huruf, atau objek lainnya, dan biasanya dituliskan menggunakan tanda kurung kurawal `{}`. Setiap elemen dalam himpunan hanya muncul satu kali, tanpa memperhatikan urutan. 
 
 ### Notasi Himpunan
