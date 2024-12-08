@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>HIMPUNAN &#8212; Mas WEB</title>
+    <title>Teorema Bayes &#8212; Mas WEB</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Himpunan';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Probabilitas bayes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Algoritma" href="Algoritma.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
+    <link rel="prev" title="DERETAN DAN REKURSI" href="DERETAN%20DAN%20REKURSI.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,7 +181,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">HIMPUNAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Himpunan.html">HIMPUNAN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Logika.html">Logika Matemaktika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Aljabar Boolean Dan Gerbang Logika</a></li>
@@ -197,7 +196,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20bayes.html">Teorema Bayes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Teorema Bayes</a></li>
 </ul>
 
     </div>
@@ -269,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FHimpunan.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProbabilitas bayes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +298,7 @@
       
       
       
-      <li><a href="_sources/Himpunan.md" target="_blank"
+      <li><a href="_sources/Probabilitas bayes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>HIMPUNAN</h1>
+    <h1>Teorema Bayes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,9 +392,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-himpunan">Notasi Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-himpunan">Jenis Himpunan:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-pada-himpunan">Operasi pada Himpunan:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum-teorema-bayes">Rumus Umum Teorema Bayes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior"><strong>1. Prior</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#likelihood"><strong>2. Likelihood</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior"><strong>3. Posterior</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-teorema-bayes"><strong>Hubungan dengan Teorema Bayes</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -407,41 +410,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="himpunan">
-<h1>HIMPUNAN<a class="headerlink" href="#himpunan" title="Link to this heading">#</a></h1>
-<p><strong>Himpunan</strong> adalah konsep matematika yang mewakili kumpulan objek atau elemen yang memiliki sifat-sifat tertentu. Himpunan bisa terdiri dari bilangan, huruf, atau objek lainnya, dan biasanya dituliskan menggunakan tanda kurung kurawal <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Setiap elemen dalam himpunan hanya muncul satu kali, tanpa memperhatikan urutan.</p>
-<section id="notasi-himpunan">
-<h2>Notasi Himpunan<a class="headerlink" href="#notasi-himpunan" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-bayes">
+<h1>Teorema Bayes<a class="headerlink" href="#teorema-bayes" title="Link to this heading">#</a></h1>
+<p>Teorema Bayes adalah aturan dalam probabilitas yang menggambarkan cara memperbarui kemungkinan suatu hipotesis berdasarkan bukti baru. Teorema ini dinamai setelah Thomas Bayes, seorang matematikawan Inggris.</p>
+<section id="rumus-umum-teorema-bayes">
+<h2>Rumus Umum Teorema Bayes:<a class="headerlink" href="#rumus-umum-teorema-bayes" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)</span></p>
 <ul class="simple">
-<li><p><strong>Himpunan A</strong> bisa ditulis sebagai <span class="math notranslate nohighlight">\(A = \{1, 2, 3\}\)</span>, yang berarti himpunan A terdiri dari elemen 1, 2, dan 3.</p></li>
-<li><p><strong>Anggota</strong> atau <strong>elemen</strong> dari himpunan adalah objek yang termasuk dalam himpunan tersebut.</p></li>
+<li><p><strong>(P(A|B))</strong>: Probabilitas kejadian <strong>A</strong> terjadi jika <strong>B</strong> telah terjadi (probabilitas posterior).</p></li>
+<li><p><strong>(P(B|A))</strong>: Probabilitas <strong>B</strong> terjadi jika <strong>A</strong> terjadi (probabilitas likelihood).</p></li>
+<li><p><strong>(P(A))</strong>: Probabilitas awal atau sebelum bukti, disebut probabilitas prior.</p></li>
+<li><p><strong>(P(B))</strong>: Probabilitas total dari <strong>B</strong>, yang dapat dihitung sebagai:
+<span class="math notranslate nohighlight">\(P(B) = P(B|A) \cdot P(A) + P(B|\neg A) \cdot P(\neg A)\)</span></p></li>
 </ul>
-</section>
-<section id="jenis-himpunan">
-<h2>Jenis Himpunan:<a class="headerlink" href="#jenis-himpunan" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Himpunan Kosong</strong>: Himpunan yang tidak memiliki elemen, ditulis sebagai <span class="math notranslate nohighlight">\(\emptyset\)</span> atau {}.</p></li>
-<li><p><strong>Himpunan Berhingga</strong>: Himpunan dengan jumlah elemen yang terbatas, misalnya <span class="math notranslate nohighlight">\(A = \{1, 2, 3\}\)</span>.</p></li>
-<li><p><strong>Himpunan Tak Berhingga</strong>: Himpunan dengan jumlah elemen yang tak terbatas, misalnya himpunan bilangan asli <span class="math notranslate nohighlight">\(A = \{1, 2, 3, 4, 5, \dots \}\)</span>.</p></li>
-</ol>
-</section>
-<section id="operasi-pada-himpunan">
-<h2>Operasi pada Himpunan:<a class="headerlink" href="#operasi-pada-himpunan" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Gabungan (Union)</strong>: Gabungan dua himpunan ( A ) dan ( B ), yang merupakan himpunan yang mengandung semua elemen dari <span class="math notranslate nohighlight">\(A\)</span> atau <span class="math notranslate nohighlight">\(B\)</span>, ditulis sebagai <span class="math notranslate nohighlight">\(A \cup B\)</span>.</p></li>
-<li><p><strong>Irisan (Intersection)</strong>: Irisan dua himpunan ( A ) dan <span class="math notranslate nohighlight">\(B\)</span>, yaitu himpunan yang hanya berisi elemen yang ada di kedua himpunan, ditulis sebagai <span class="math notranslate nohighlight">\(A \cap B\)</span>.</p></li>
-<li><p><strong>Komplemen (Complement)</strong>: Komplemen dari himpunan <span class="math notranslate nohighlight">\(A\)</span>, yaitu himpunan elemen yang tidak ada di dalam <span class="math notranslate nohighlight">\(A\)</span>, ditulis sebagai <span class="math notranslate nohighlight">\(A'\)</span>.</p></li>
-</ol>
-<p>Contoh operasi himpunan:</p>
+<p>Berikut adalah penjelasan tentang <strong>Posterior</strong>, <strong>Prior</strong>, dan <strong>Likelihood</strong> dalam konteks <strong>Teorema Bayes</strong>:</p>
+<section id="prior">
+<h3><strong>1. Prior</strong><a class="headerlink" href="#prior" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Jika <span class="math notranslate nohighlight">\(A = \{1, 2, 3\}\)</span> dan <span class="math notranslate nohighlight">\(B = \{3, 4, 5\}\)</span>:</p>
+<li><p><strong>Definisi</strong>: Prior adalah probabilitas awal dari suatu hipotesis sebelum memperhitungkan bukti baru.</p></li>
+<li><p><strong>Notasi</strong>: <span class="math notranslate nohighlight">\((P(A))\)</span>, di mana <span class="math notranslate nohighlight">\((A)\)</span> adalah hipotesis.</p></li>
+<li><p><strong>Makna</strong>: Ini mencerminkan pengetahuan atau asumsi awal kita tentang suatu kejadian. Misalnya:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(A \cup B = \{1, 2, 3, 4, 5\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(A \cap B = \{3\}\)</span></p></li>
+<li><p>Probabilitas awal seseorang memiliki penyakit sebelum melihat hasil tes.</p></li>
 </ul>
 </li>
 </ul>
-<p>Himpunan adalah bagian dasar dari matematika dan digunakan dalam berbagai bidang, termasuk statistika, logika, dan komputasi.</p>
+</section>
+<section id="likelihood">
+<h3><strong>2. Likelihood</strong><a class="headerlink" href="#likelihood" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definisi</strong>: Likelihood adalah probabilitas bukti terjadi <strong>dengan asumsi hipotesis benar</strong>.</p></li>
+<li><p><strong>Notasi</strong>: <span class="math notranslate nohighlight">\((P(B|A))\)</span>, di mana <span class="math notranslate nohighlight">\((B)\)</span> adalah bukti, dan <span class="math notranslate nohighlight">\((A)\)</span> adalah hipotesis.</p></li>
+<li><p><strong>Makna</strong>: Likelihood menunjukkan seberapa mungkin bukti <span class="math notranslate nohighlight">\((B)\)</span> terjadi jika hipotesis <span class="math notranslate nohighlight">\((A)\)</span> benar. Misalnya:</p>
+<ul>
+<li><p>Probabilitas tes menunjukkan hasil positif jika seseorang benar-benar sakit.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="posterior">
+<h3><strong>3. Posterior</strong><a class="headerlink" href="#posterior" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definisi</strong>: Posterior adalah probabilitas diperbarui dari hipotesis setelah memperhitungkan bukti baru.</p></li>
+<li><p><strong>Notasi</strong>: <span class="math notranslate nohighlight">\((P(A|B))\)</span>, di mana <span class="math notranslate nohighlight">\((A)\)</span> adalah hipotesis, dan <span class="math notranslate nohighlight">\((B)\)</span> adalah bukti.</p></li>
+<li><p><strong>Makna</strong>: Ini adalah probabilitas yang telah diperbarui dengan bukti baru. Misalnya:</p>
+<ul>
+<li><p>Probabilitas seseorang memiliki penyakit berdasarkan hasil tes yang positif.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hubungan-dengan-teorema-bayes">
+<h3><strong>Hubungan dengan Teorema Bayes</strong><a class="headerlink" href="#hubungan-dengan-teorema-bayes" title="Link to this heading">#</a></h3>
+<p>Teorema Bayes menggambarkan hubungan antara prior, likelihood, dan posterior:
+<span class="math notranslate nohighlight">\(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)</span></p>
+<ul class="simple">
+<li><p><strong>Prior</strong>: <span class="math notranslate nohighlight">\((P(A))\)</span></p></li>
+<li><p><strong>Likelihood</strong>: <span class="math notranslate nohighlight">\((P(B|A))\)</span></p></li>
+<li><p><strong>Posterior</strong>: <span class="math notranslate nohighlight">\((P(A|B))\)</span></p></li>
+<li><p><strong>Normalisasi (probabilitas total)</strong>: <span class="math notranslate nohighlight">\((P(B))\)</span></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -476,22 +505,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="DERETAN%20DAN%20REKURSI.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">DERETAN DAN REKURSI</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Algoritma.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Algoritma</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -509,9 +529,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-himpunan">Notasi Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-himpunan">Jenis Himpunan:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-pada-himpunan">Operasi pada Himpunan:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum-teorema-bayes">Rumus Umum Teorema Bayes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior"><strong>1. Prior</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#likelihood"><strong>2. Likelihood</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior"><strong>3. Posterior</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-teorema-bayes"><strong>Hubungan dengan Teorema Bayes</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
