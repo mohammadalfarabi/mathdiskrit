@@ -5,7 +5,7 @@ title: UAS
 
 # UAS
 ## 1. soal satu
-| p | q | r | s | $p \rightarrow q$ | $r \rightarrow s$ |$p \rightarrow q /rightarrow r \rightarrow s$
+| p | q | r | s | $p \rightarrow q$ | $r \rightarrow s$ | $(p \rightarrow q) \rightarrow (r \rightarrow s)$
 | - | - | - | - | - | - | - |
 | T | T | T | T | T | T | T |
 | T | T | T | F | T | F | F |
@@ -33,7 +33,7 @@ $$
 | f | 2 | 4 | 3 | 2 | 1 | 0 | 1 |
 
 $$
-C_b(f) = \frac{7-1}{((13-1)(13-2))/2} = 0.3333
+C_b(f) = \frac{7-1}{((13-1)(13-2))/2} = 0,0909
 $$
 
 
