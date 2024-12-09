@@ -17,7 +17,7 @@ title: UAS
 | F | T | T | T | T | T | T |
 
 ## 2. soal dua
-<a href="https://imgbb.com/"><img src="https://i.ibb.co.com/8XvVb0f/Screenshot-2024-12-09-140424.png" alt="Screenshot-2024-12-09-140424" border="0"></a>
+<a><img src="https://i.ibb.co.com/8XvVb0f/Screenshot-2024-12-09-140424.png" alt="Screenshot-2024-12-09-140424" border="0"></a>
 
 ### a. Closeness Centrality
 |  | a | b | c | d | e | f | g |
